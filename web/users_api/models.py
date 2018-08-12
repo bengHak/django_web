@@ -9,3 +9,6 @@ class Users(AbstractBaseUser):
     followers = models.ManyToManyField("self", blank=True)
     following = models.ManyToManyField("self", blank=True)
     github = models.URLField(null=True)
+
+    def __str__(self):
+        return self.username
