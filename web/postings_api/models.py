@@ -1,4 +1,5 @@
 from django.db import models
+from users_api.models import Users
 
 # Create your models here.
 
@@ -10,9 +11,9 @@ class TimeStampedModel(models.Model):
     class Meta:
         abstract = True
 
+#생성시각, 수정시각 추가
 class Postings(TimeStampedModel):
-    user_id = models.ForeignKey(users_api.Model, on_delete=models.CASCADE)
-    name = models.ForeignKeyField('TargetModel', related_name='', on_delete=models.CASCADE)
+    name = models.ForeignKey(Users, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     content = models.TextField()
     
@@ -20,13 +21,13 @@ class Postings(TimeStampedModel):
         ordering = ['-created_at']
 
 
+#생성시각, 수정시각 추가
 class Comment(TimeStampedModel):
     
     """ Comment Model """
 
     message = models.TextField()
-    creator = models.ForeignKey(users_api.Model, null=True)
-    image = models.ForeignKey(Image, null=True, related_name='comments')
+    creator = models.ForeignKey(Users, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.message
