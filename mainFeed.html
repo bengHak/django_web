@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        HUFS 컴전 세미나 신청 페이지
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/web.css">
+    <link rel="stylesheet" media="(max-width: 500px)" href="css/mobile.css">
+</head>
+<body>
+    <!--헤더입니다-->
+    <div class="header">
+        <h1>SEMINAR with TAB</h1>
+    </div>
+
+    <!--배경이미지 입니다-->
+    <div class="bgimg">
+        <div class="caption">
+            <span class="border">컴퓨터 프로그래밍 및 실습 대비 세미나</span><br><br>
+            <span class="border">진행기간 : 9/3 ~ 10/15</span>
+        </div>
+        <div class="reservation">
+            <form action="http://127.0.0.1:8000/user/" method="post">
+                <div class="email">
+                    <input type="email" name="email" placeholder="이메일을 입력하세요">
+                </div>
+                <div class="name">
+                    <input type="text" name="username" placeholder="이름을 입력하세요">
+                </div>
+                <div class="phoneNumber">
+                    <input type="tel" name="phone" placeholder="전화번호를 입력하세요">
+                </div>
+                <div class="schoolNumber">
+                    <input type="tel" name="school_id" placeholder="학번을 입력하세요">
+                </div>
+                <div class="password">
+                    <input type="text" name="password" placeholder="비밀번호를 입력하세요">
+                </div>
+                <div class="submit">
+                    <button type="submit">사전예약</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!--푸터 입니다-->
+    <div class="footer">
+        contacts<br>
+        고병학 : 010-9931-7685<br>
+        권승용 : 010-5011-2052
+    </div>
+</body>
+</html>
+
+

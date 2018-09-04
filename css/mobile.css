@@ -1,0 +1,104 @@
+body, html{
+    height: 100%;
+    margin: 0 auto;
+    font-family: "돋움", dotum, "굴림", gulim, arial, helvetica, sans-serif;
+}
+
+.header{
+    overflow: hidden;
+    height: 12.8vw;
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    text-align: center;
+    color: black;
+    margin: 0 auto;
+}
+
+.header h1{
+    font-size: 4.8vw;
+    letter-spacing: 1vw;
+    margin: 4vw auto;
+}
+
+.bgimg { 
+    position: relative;
+    z-index: 1;
+    /* The image used */
+    background-image: url("https://cdn.pixabay.com/photo/2016/11/23/14/37/apple-1853259_1280.jpg");
+    /* Full height */
+    height: 90%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+}
+
+.caption{
+    position: absolute;
+    left: 0;
+    top: 5%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+}
+
+.caption span.border{
+    color: #fff;
+    font-size: 4.8vw;
+    letter-spacing: 1vw;
+}
+
+.reservation{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 3;
+    border: none;
+    top: 25%;
+}
+
+.email, .name, .phoneNumber, .schoolNumber{
+    text-align: center;
+    border: none;
+}
+
+.footer{
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+    height: 70px;
+    background: black;
+    color: white;
+    opacity: 0.6;
+    line-height: 150%;
+    padding-top: 10px;
+}
+
+input[type=text], input[type=tel], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.submit button {
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit button:hover {
+    opacity: 0.8;
+}

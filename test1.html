@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        
+        function showAll(){
+            var req = new XMLHttpRequest();
+            req.responseType = 'json';
+            var url = "http://127.0.0.1:8000/user/"
+            req.open('GET', url, true);
+            req.onreadystatechange  = function() {
+                var jsonResponse = req.response;
+                //var r1 = JSON.parse(req.response);
+                myFunction(jsonResponse)
+            };
+            req.send(null);
+        }
+
+        function myFunction(arr) {
+            var out = "";
+            var i;
+            for(i = 0; i < arr.length; i++) {
+                out += 'id : ' + arr[i].id +'<br>'+
+                'school_id : ' + arr[i].school_id + '<br>' +
+                'email : ' + arr[i].email + '<br>'+
+                'username : ' + arr[i].username + '<br><br>';
+            }
+            document.getElementById("id01").innerHTML = out;
+        }
+
+        function post(){
+            postStr = {};
+            postStr.email = 'aaa@bbb1.com';
+            postStr.school_id = 20153021;
+            postStr.password = 0000;
+            postStr.phone = '01099317685';
+            postStr.username = '김길동';
+
+            url = 'http://127.0.0.1:8000/user/'
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("POST",url, true);
+            xmlHttp.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+            xmlHttp.send(JSON.stringify(postStr));
+        }
+
+    </script>
+
+    <button onclick=showAll()>SHOW_ALL</button>
+    
+    <button onclick=post()>post</button>
+    <div id="id01"></div>
+    
+    <form action = "http://127.0.0.1:8000/user/" method = "post">
+        <fieldset style = "width:150">
+            <legend>개인 정보 입력</legend>
+               이름 : <input type = "text" name = "username" required/><br><br>
+               패스워드 : <input type = "password" name = "password"/><br><br>
+               <input type = "submit" value = "submit"/>
+               <input type = "reset" value = "reset"/><br><br>
+        </fieldset> 
+    </form>
+
+</body>
+</html>
